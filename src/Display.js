@@ -4,7 +4,7 @@ const Screen=(props)=>
 {
     return (
         <div className="display-container">
-
+        
         </div>
     );
 }
