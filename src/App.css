@@ -131,3 +131,17 @@
   border:none;
   background-color: transparent;
 }
+
+.display-menu {
+	width: 50%;
+	height: 100%;
+	position: relative;
+	z-index: 5;
+  margin-top: -13px;
+	left: 0%;
+	background-color: lightblue;
+}
+
+.display-menu h1{
+  font-size:20px;
+}
