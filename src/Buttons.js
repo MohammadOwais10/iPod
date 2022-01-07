@@ -1,13 +1,14 @@
 import React from 'react'
 
-const Buttons=(props)=>
-{
+const Buttons = (props) => {
     return (
         <div className="buttons-container">
-            <button className="buttons-center">
+            <button className="buttons-center"
+                onClick={props.selectButtonClicked}>
                 <h2>Select</h2>
             </button>
-            <button className="button-menu">
+            <button className="button-menu"
+                onClick={props.menuButtonClicked}>
                 <i class="fas fa-bars"></i>
             </button>
             <button className="button-left">
@@ -20,7 +21,6 @@ const Buttons=(props)=>
                 <i class="fas fa-play"></i> /<i class="fas fa-pause"></i>
             </button>
         </div>
-
     );
 }
 

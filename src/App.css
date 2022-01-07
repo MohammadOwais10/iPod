@@ -51,6 +51,11 @@
     margin:auto;
     border:1px solid grey;
     border-radius: 5px;
+    background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+    overflow: hidden;
+    position:relative;
   }
 
 .buttons-container{
@@ -135,13 +140,46 @@
 .display-menu {
 	width: 50%;
 	height: 100%;
-	position: relative;
-	z-index: 5;
-  margin-top: -13px;
+	position: absolute;
 	left: 0%;
 	background-color: lightblue;
+  box-shadow: 0px 0px 12px 1px rgb(82, 82, 82);
+  box-shadow: none;
+  overflow-x: hidden;
+  transition: width ease-in-out 0.2s;
+}
+
+.width-50{
+    width:50% !important;
+    box-shadow: 0px 0px 12px 1px rgb(82, 82, 82) !important;
+}
+
+.display-menu>div{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:20%;
+    border:1px solid rgb(190, 190, 190);
+    box-sizing: border-box;
+    white-space: nowrap;/* to turn off text wrapping in the screen menu */
 }
 
 .display-menu h1{
   font-size:20px;
+  overflow-wrap: normal;
 }
+.display-menu p{
+  font-size:20px;
+  overflow-wrap: normal;
+}
+
+.display-menu>.selected{
+    background-color:rgb(255, 89, 213);
+}
+
+.logo{
+  background-color: rgb(235, 182, 8);
+  color:white;
+  font-size: large;
+} 
