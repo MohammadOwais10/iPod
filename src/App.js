@@ -9,13 +9,17 @@ import 'lodash';
 class App extends React.Component {
     constructor() {
         super();
-        this.changeAngle = 0; //temp_change_in_angle
-        this.selectItem = 0;  //temp_selected
+        this.changeAngle = 0; 
+        this.selectItem = 0;  
         this.state = {
             options: ['Gallery','Games', 'Music', 'Setting'],
+            musicItem:['Songs', 'Albums','Artists'],
             changeAngle: 0,
             selected: 0,
-            showPage: -1
+            showPage: -1,
+            songSelection: 0, 
+            songIndex: -1,
+            nowPlaying:false, 
         }
     }
 
@@ -57,11 +61,64 @@ class App extends React.Component {
     }
 
     selectButtonClicked = () => {
-        this.menuButtonClicked();
+            if(this.state.selected===1 && this.state.options.length === 4) {
+                  this.setState({
+                        options: this.state.musicItem,
+                        selected:0,
+                        showPage: -1,//0
+                        songIndex: -1,//we dont want to play any song
+                    }
+                  );
+                  this.selectItem = 0;
+                  return;
+                }
+            if (!document.getElementsByClassName('display-menu')[0].classList.contains('width-50')) {
+              if (this.state.options.length === 3) {    //for music section
+                if (this.state.showPage === 0) {        //for songs page
+                    if (this.state.songIndex === -1) {  //not on music page
+                        this.setState ({
+                            songIndex: this.state.songSelection,   //for selection ofsong to play 
+                        });
+                        this.selectItem = 0;
+                        return;
+                    }
+                }
+            }
+        }
+        
         this.setState({
-            showPage: this.state.selected
+            showPage: this.state.selected,
+            songIndex: -1,         // song not play
+            selected: 0,
         });
+        this.selectItem = 0;
+        this.menuButtonClicked();
     }
+
+    currentlyOnPlayMusicScreen = () =>  
+    {
+        if (this.state.nowPlaying)
+        {
+            this.setState({
+                nowPlaying: false
+            });
+        }
+        else
+            this.setState({
+                nowPlaying: true
+            });
+    }  
+
+    playPauseButtonClicked = () => {
+        if (document.getElementsByClassName('audio')[0] !== undefined) {
+            if (document.getElementsByClassName('audio')[0].paused) {
+                (document.getElementsByClassName('audio')[0].play());
+                return;
+            }
+            (document.getElementsByClassName('audio')[0].pause());
+        }
+    }
+
 
     render() {
         return (
@@ -69,12 +126,18 @@ class App extends React.Component {
                 <Display
                     selectedOption={this.state.selected}
                     showPage={this.state.showPage}
+                    optionsInMenu={this.state.options}
+                    currentMusicSelection={this.state.songSelection}
+                    songIndex={this.state.songIndex}
+                    currentlyOnPlayMusicScreen={this.currentlyOnPlayMusicScreen}
+                    playPauseButtonClicked={this.playPauseButtonClicked}
                 />
                 <Buttons
                     check={this.checker}
                     centerButton={this.centerButton}
                     menuButtonClicked={this.menuButtonClicked}
                     selectButtonClicked={this.selectButtonClicked}
+                    playPauseButtonClicked={this.playPauseButtonClicked}
                 />
             </div>
         );

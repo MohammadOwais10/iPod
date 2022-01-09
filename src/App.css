@@ -183,3 +183,100 @@
   color:white;
   font-size: large;
 } 
+
+/****** Dispaly ******/
+
+.screen-game
+{
+    height:100%;
+    width:100%;
+    background-color: rgba(228, 70, 70, 0.9);
+    box-sizing: border-box;
+    overflow:hidden;
+}
+.screen-music
+{
+    height:100%;
+    width:100%;
+    background-color: rgba(18, 91, 100, 0.9);
+    box-sizing: border-box;
+    overflow:hidden;
+}
+.screen-setting
+{
+    height:100%;
+    width:100%;
+    background-color: rgba(71, 11, 63, 0.9);
+    box-sizing: border-box;
+    overflow:hidden;
+}
+.screen-coverflow
+{
+    height:100%;
+    width:100%;
+    background-color: rgba(24, 207, 146, 0.9);
+    box-sizing: border-box;
+    overflow:hidden;
+}
+
+/***** Songs Dispaly *****/
+.all-songs
+{
+    height:100%;
+    width:100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-sizing: border-box;
+    overflow:hidden;
+}
+.all-songs-heading
+{
+    padding-bottom:10px;
+    background-color: rgb(255, 51, 0);
+    margin:0px;
+    opacity:0.8;
+    height:10%;
+}
+.all-songs-list
+{
+    height:86%;
+}
+.all-songs-list>div
+{
+    border:1px solid rgb(207, 207, 207);
+    width:1005;
+    height:14%;
+  }
+  .instruction-all-songs
+  {
+      height:20%;
+      background-color: blueviolet;
+      color:white;
+  }
+  .selected-song
+  {
+      background-color:rgb(255, 166, 0);
+  } 
+
+/******** Music Display ******/
+.screen-music>h1
+{
+    margin:0px;
+    padding:5px;
+    background-image: linear-gradient(45deg, red -100%,  blue 200%);
+    color:white;
+}
+
+.song-image
+{
+    width:50%;
+    height:50%;
+    border:1px solid black;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.song-image>img
+{
+    height:100%;
+    width:100%;
+}

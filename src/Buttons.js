@@ -17,7 +17,8 @@ const Buttons = (props) => {
             <button className="button-right">
                 <i class="fas fa-forward"></i>
             </button>
-            <button className="button-play-pause">
+            <button className="button-play-pause" 
+            onClick={props.playPauseButtonClicked}>
                 <i class="fas fa-play"></i> /<i class="fas fa-pause"></i>
             </button>
         </div>

@@ -1,32 +1,26 @@
-// import React from "react";
-// import Gallery from "./Gallery";
-// import Games from "./Games";
-// import Music from "./Music";
-// import Setting from "./Setting";
+import React from "react";
 
-// class ItemList extends React.Component {
-//     render() {
-//         const { selectedOption } = this.props;
-//         return (
-//             <div className="list">
-//                 {/* <Gallery/>
-//             <Games/>
-//             <Music/>
-//             <Setting/> */}
-//                 <div className={selectedOption === 0 ? 'selected' : ''}>
-//                     <p>Gallery</p>
-//                 </div>
-//                 <div className={selectedOption === 1 ? 'selected' : ''}>
-//                     <p>Games</p>
-//                 </div>
-//                 <div className={selectedOption === 2 ? 'selected' : ''}>
-//                     <p>Music</p>
-//                 </div>
-//                 <div className={selectedOption === 3 ? 'selected' : ''}>
-//                     <p>Setting</p>
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
-// export default ItemList;
+class ItemList extends React.Component {
+    render() {
+        const { optionsInMenu } = this.props;
+        return (
+            <React.Fragment> {
+                optionsInMenu.map((item, index) => {
+                    return (
+                        <div className={this.props.selectedOption === index ? 'selected' : ''} key={index}>
+                            <p>{item}</p>
+                        </div>
+                    )
+                })
+            }
+
+                {optionsInMenu.length === 3 ?
+                    <div style={{ color: 'green' }}>
+                        <p style={{ fontSize: 18 }}>click "<i className="fas fa-backward"></i>" to go back</p>
+                    </div> : ''
+                }
+            </React.Fragment>
+        )
+    }
+}
+export default ItemList;
