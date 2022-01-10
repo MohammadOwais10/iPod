@@ -26,8 +26,6 @@ class Display extends React.Component {
                 {this.props.showPage === 3 && this.props.optionsInMenu.length === 4 ? <Setting /> : ''} 
 
                 {this.props.showPage === 0 && this.props.optionsInMenu.length === 3 ? <Songs
-                currentMusicSelection={this.props.currentMusicSelection}
-                songIndex={this.props.songIndex}
                 playPauseButtonClicked={this.props.playPauseButtonClicked}
                 /> : ''}
                 {this.props.showPage === 1 && this.props.optionsInMenu.length === 3 ? <Albums /> : ''}

@@ -94,20 +94,7 @@ class App extends React.Component {
         this.selectItem = 0;
         this.menuButtonClicked();
     }
-
-    currentlyOnPlayMusicScreen = () =>  
-    {
-        if (this.state.nowPlaying)
-        {
-            this.setState({
-                nowPlaying: false
-            });
-        }
-        else
-            this.setState({
-                nowPlaying: true
-            });
-    }  
+  
 
     playPauseButtonClicked = () => {
         if (document.getElementsByClassName('audio')[0] !== undefined) {
@@ -129,7 +116,6 @@ class App extends React.Component {
                     optionsInMenu={this.state.options}
                     currentMusicSelection={this.state.songSelection}
                     songIndex={this.state.songIndex}
-                    currentlyOnPlayMusicScreen={this.currentlyOnPlayMusicScreen}
                     playPauseButtonClicked={this.playPauseButtonClicked}
                 />
                 <Buttons
