@@ -138,7 +138,7 @@
 }
 
 .display-menu {
-	width: 50%;
+	width: 0%;   
 	height: 100%;
 	position: absolute;
 	left: 0%;
@@ -147,10 +147,11 @@
   box-shadow: none;
   overflow-x: hidden;
   transition: width ease-in-out 0.2s;
+  z-index: 10 ;
 }
 
 .width-50{
-    width:0% !important;
+    width:50% !important;
     box-shadow: 0px 0px 12px 1px rgb(82, 82, 82) !important;
 }
 
@@ -186,7 +187,7 @@
 
 /****** Dispaly ******/
 
-.screen-game
+.display-game
 {
     height:100%;
     width:100%;
@@ -194,7 +195,7 @@
     box-sizing: border-box;
     overflow:hidden;
 }
-.screen-music
+.display-music
 {
     height:100%;
     width:100%;
@@ -202,7 +203,7 @@
     box-sizing: border-box;
     overflow:hidden;
 }
-.screen-setting
+.display-setting
 {
     height:100%;
     width:100%;
@@ -210,7 +211,7 @@
     box-sizing: border-box;
     overflow:hidden;
 }
-.screen-coverflow
+.display-coverflow
 {
     height:100%;
     width:100%;

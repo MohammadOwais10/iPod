@@ -1,8 +1,8 @@
 import React from 'react';
 import firebase from "firebase/app";
-import PlayMusic from './PlayMusic';
+import Music from './Music';
 
-class AllSongs extends React.Component {
+class Songs extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -27,10 +27,11 @@ class AllSongs extends React.Component {
 
     render() {
         if (this.props.songIndex !== -1) {
-            return <PlayMusic
+            return <Music
                 songIndex={this.props.songIndex}
                 Songs={this.state.all_songs_list}
                 playPauseButtonClicked={this.props.playPauseButtonClicked}
+                currentlyOnPlayMusicScreen={this.props.currentlyOnPlayMusicScreen}
             />;
         }
         return (this.state.loading ? <h1>Loading...</h1> :
@@ -56,4 +57,4 @@ class AllSongs extends React.Component {
     }
 }
 
-export default AllSongs; 
+export default Songs; 

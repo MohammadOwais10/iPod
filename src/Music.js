@@ -1,32 +1,32 @@
-import React from "react";
-import firebase from "firebase/app";
+import React from 'react';
 
 class Music extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            audioURL: ''
-        }
+    componentDidMount() {
+        this.props.currentlyOnPlayMusicScreen();
+        this.props.playPauseButtonClicked();
     }
-    
-    UNSAFE_componentWillUnmount() {
-        firebase.firestore().collection(" all_songs_list").get()
-            .then((ans) => {
-                this.setState({
-                    audioURL: ans
-                })
-            })
+    componentWillUnmount() {
+        this.props.currentlyOnPlayMusicScreen()
     }
-
     render() {
+        const { songIndex, Songs } = this.props;
         return (
             <div className="display-music">
-                <h1>Music</h1>
-                <div className="music-icon">
-                    <i class="fas fa-music"></i>
+                <h2>{Songs[songIndex].name}</h2>
+                <div className="song-image">
+                    <img src={Songs[songIndex].song_images} alt="song item"></img>
+                </div>
+                <div style={{ marginTop: 20 }}>
+                    <audio controls="seeking" className="audio" src={Songs[songIndex].url}></audio>
+                </div>
+                <div className='display-music-instruction'>
+                    <p>
+                        Press "<i className="fas fa-play"></i>/<i className="fas fa-pause"></i>" button to play/pause.
+                    </p>
                 </div>
             </div>
-        )
+        );
     }
-}
+};
+
 export default Music;
