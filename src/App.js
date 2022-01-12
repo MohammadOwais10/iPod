@@ -23,8 +23,8 @@ class App extends React.Component {
             nowPlaying: false,
         }
     }
-
-    componentDidMount() {
+ 
+    componentDidMount(){
         var zt = new ZingTouch.Region(document.getElementsByClassName('buttons-container')[0]);
         zt.bind(document.getElementsByClassName('buttons-container')[0], 'rotate', (event) => {
             let dist = event.detail.distanceFromLast;
@@ -62,6 +62,10 @@ class App extends React.Component {
     }
 
     selectButtonClicked = () => {
+        if(this.state.nowPlaying&&!document.getElementsByClassName('display-menu')[0].classList.contains('width-50'))//if i am currently on the play music screen and the side bar is hidden, in that case if i click on the select button, ideally nothing should happen.
+        {
+            return;
+        }
         if (this.state.selected === 1 && this.state.options.length === 4) {
             this.setState({
                 options: this.state.musicItem,
@@ -173,7 +177,7 @@ class App extends React.Component {
         }
     }
 
-    currentlyOnPlayMusicScreen = () => {
+    currentlyOnPlayMusicScreen = () => { 
         if (this.state.nowPlaying) {
             this.setState({
                 nowPlaying: false
@@ -186,12 +190,15 @@ class App extends React.Component {
     }
 
     playPauseButtonClicked = () => {
+        let wheelcolor=document.getElementsByClassName('buttons-container')[0].classList;
         if (document.getElementsByClassName('audio')[0] !== undefined) {
             if (document.getElementsByClassName('audio')[0].paused) {
                 (document.getElementsByClassName('audio')[0].play());
+                wheelcolor.add("colored");
                 return;
             }
             (document.getElementsByClassName('audio')[0].pause());
+            wheelcolor.remove("colored");
         }
     }
 

@@ -281,3 +281,37 @@
     height:100%;
     width:100%;
 }
+
+@keyframes wheel-color-animation
+{
+    0%
+    {
+        background-color:rgb(226, 224, 79);
+    }
+    25%
+    {
+        background-color:rgb(157, 229, 157);
+    }
+    50%
+    {
+        background-color:rgb(138, 200, 241);
+    }
+    75%
+    {
+        background-color:rgb(223, 65, 183);
+    }
+    100%
+    {
+        background-color: rgb(255, 82, 82);
+    }
+}
+
+
+.colored{
+    animation-name: wheel-color-animation;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    color:white;
+    opacity:0.9;
+}
