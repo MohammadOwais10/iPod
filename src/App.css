@@ -41,21 +41,26 @@
   padding:10px;
   margin: auto;
   margin-top: 10px;
-  border:5px solid black;
-  border-radius: 10px;
+  border:10px solid lightgray;
+  border-radius: 25px;
+  background: linear-gradient(to top, #8e9eab, #eef2f3); 
+border-style: groove;
+
+
 }
 
 .display-container{
-    width:300px;
-    height:300px;
+    width:330px;
+    height:330px;
     margin:auto;
-    border:1px solid grey;
-    border-radius: 5px;
+    /* border:1px solid grey; */
+    border-radius: 15px;
     background-position: center;
 	  background-repeat: no-repeat;
 	  background-size: cover;
     overflow: hidden;
     position:relative;
+    background-color: whitesmoke;
   }
 
 .buttons-container{
@@ -68,6 +73,7 @@
     border: 1px solid black;
     border-radius: 50%;
     position:relative;
+    background-color: whitesmoke;
 }
 .buttons-center{
     width:50%;
@@ -199,10 +205,12 @@
 {
     height:100%;
     width:100%;
-    background-color: rgba(18, 91, 100, 0.9);
-    box-sizing: border-box;
-    overflow:hidden;
-}
+    background-color: white;
+    /* background-color: rgb(28, 250, 158); */
+    /* background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);   */
+  }
+
+
 .display-setting
 {
     height:100%;
@@ -236,6 +244,7 @@
     margin:0px;
     opacity:0.8;
     height:10%;
+    text-align: center;
 }
 .all-songs-list
 {
@@ -246,6 +255,7 @@
     border:1px solid rgb(207, 207, 207);
     width:1005;
     height:14%;
+    text-align: center;
   }
   .instruction-all-songs
   {
@@ -259,27 +269,35 @@
   } 
 
 /******** Music Display ******/
-.screen-music>h1
+.display-music>h2
 {
     margin:0px;
-    padding:5px;
-    background-image: linear-gradient(45deg, red -100%,  blue 200%);
-    color:white;
+    padding:0 ;
+    color:rgb(0, 0, 0);
+    text-align: center;
 }
 
 .song-image
 {
-    width:50%;
-    height:50%;
-    border:1px solid black;
+    width:82%;
+    height:75%;
     margin-left:auto;
     margin-right:auto;
+    /* border:5px solid rgb(0, 0, 0); */
+    border-radius: 5%;
+    box-shadow: 2px 1px 2px #eee, 0px 2px 2px #e9e9e9, 5px 3px 2px #ccc, 5px 4px 2px #c9c9c9, 5px 5px 2px #bbb, 5px 6px 2px #b9b9b9, 0px 7px 2px #999, 0px 7px 2px rgba(0,0,0,.5), 0px 7px 2px rgba(0,0,0,0.1), 0px 7px 2px rgba(0,0,0,.73), 0px 3px 5px rgba(0,0,0,.3), 0px 5px 10px rgba(0,0,0,.37), 0px 10px 10px rgba(0,0,0,.1), 0px 20px 20px rgba(0,0,0,0.1); 
 }
 
 .song-image>img
 {
     height:100%;
     width:100%;
+    border-radius: 5%;
+}
+.player audio{
+  margin: 10px 25px;
+  width: 285px;
+  height: 30px;
 }
 
 @keyframes wheel-color-animation

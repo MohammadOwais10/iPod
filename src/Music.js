@@ -16,13 +16,8 @@ class Music extends React.Component {
                 <div className="song-image">
                     <img src={Songs[songIndex].song_images} alt="song item"></img>
                 </div>
-                <div style={{ marginTop: 20 }}>
+                <div className='player'>
                     <audio controls="seeking" className="audio" src={Songs[songIndex].url}></audio>
-                </div>
-                <div className='display-music-instruction'>
-                    <p>
-                        Press "<i className="fas fa-play"></i>/<i className="fas fa-pause"></i>" button to play/pause.
-                    </p>
                 </div>
             </div>
         );
