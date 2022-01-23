@@ -15,6 +15,7 @@ class App extends React.Component {
             options: ['Games', 'Music', 'Gallery', 'Setting'],
             musicItem: ['Songs', 'Artists', 'Albums'],
             generalMenu: ['Games', 'Music', 'Gallery', 'Setting'],
+            settingItem:['Wallpaper','Theme'],
             changeAngle: 0,
             selected: 0,
             showPage: -1,
@@ -59,6 +60,28 @@ class App extends React.Component {
         else {
             displayMenuClassList.add('width-50');//show menu
         }
+
+
+         if( displayMenuClassList.contains('width-50') && this.state.options.length === 3 ){
+            this.setState({
+                options:this.state.generalMenu,
+                showPage:-1,
+            });
+        }
+     //   if (this.state.options.length === 3 && document.getElementsByClassName('display-menu')[0].classList.contains('width-50'))//if the menu is open and it is on the songs page only then if the left button clicked, menu will be changed to general options
+    //      {
+    //     //    if( this.state.showPage === 0 || this.state.showPage === 1 || this.state.showPage === 2)
+    //     if(this.state.selected ===1){
+    //         this.setState({
+    //           options:this.state.musicItem,
+    //         // selected: 0,
+    //         // showPage: -1,
+    //         // songSelection: 0,
+    //         // songsIndex: -1,
+    //         // nowPlaying: false,
+    //     });
+    // }
+    // }
     }
 
     selectButtonClicked = () => {
@@ -77,8 +100,9 @@ class App extends React.Component {
             this.selectItem = 0;
             return;
         }
+
         if (!document.getElementsByClassName('display-menu')[0].classList.contains('width-50')) {
-            if (this.state.options.length === 3) {    //for music section
+            if (this.state.options.length === 3 ) {    //for music section
                 if (this.state.showPage === 0) {        //for songs page
                     if (this.state.songsIndex === -1) {  //not on music page
                         this.setState({
@@ -90,6 +114,24 @@ class App extends React.Component {
                 }
             }
         }
+
+
+        if (this.state.selected === 3 && this.state.options.length === 4) {
+            this.setState({
+                options: this.state.settingItem,
+                selected: 0,
+                showPage: -1,//0
+                songsIndex: -1,//we dont want to play any song
+            }
+            );
+            this.selectItem = 0;
+            return;
+        }
+    
+
+
+
+
 
         this.setState({
             showPage: this.state.selected,
@@ -119,13 +161,13 @@ class App extends React.Component {
             }
         }
 
-        if (this.state.options.length === 3 && document.getElementsByClassName('display-menu')[0].classList.contains('width-50'))//if the menu is open and it is on the songs page only then if the left button clicked, menu will be changed to general options
-            this.setState({
-                    options: this.state.generalMenu,
-                    songsIndex: -1,
-                    // selected: 0
-                }
-            );
+        // if (this.state.options.length === 3 && document.getElementsByClassName('display-menu')[0].classList.contains('width-50'))//if the menu is open and it is on the songs page only then if the left button clicked, menu will be changed to general options
+        //     this.setState({
+        //             options: this.state.generalMenu,
+        //             songsIndex: -1,
+        //             // selected: 0
+        //         }
+        //     );
         if (!document.getElementsByClassName('display-menu')[0].classList.contains('width-50')) {     //side menu is not visible
             if (this.state.options.length === 3) {             // in music section
                 if (this.state.showPage === 0) {              // in songs page
@@ -175,7 +217,10 @@ class App extends React.Component {
                 }
             }
         }
-    }
+}
+
+
+
 
     currentlyOnPlayMusicScreen = () => { 
         if (this.state.nowPlaying) {

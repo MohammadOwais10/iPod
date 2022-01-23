@@ -58,7 +58,7 @@
 	  background-size: cover;
     overflow: hidden;
     position:relative;
-    background-color: whitesmoke;
+    background-image: url("./assets/images/bg.jpg");
   }
 
 .buttons-container{
