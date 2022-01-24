@@ -1,5 +1,5 @@
 import React from 'react';
-import albumImage from "../src/assets/images/albumImage.png"
+import albumImage from "../src/assets/images/musicImage.jpg"
 
 class Albums extends React.Component {
     render() {

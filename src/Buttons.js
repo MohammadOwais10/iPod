@@ -9,19 +9,19 @@ const Buttons = (props) => {
             </button>
             <button className="button-menu"
                 onClick={props.menuButtonClicked}>
-                <i class="fas fa-bars"></i>
+                <i className="fas fa-bars"></i>
             </button>
             <button className="button-left"
             onClick={props.leftButtonClicked}>
-                <i class="fas fa-backward"></i>
+                <i className="fas fa-backward"></i>
             </button>
             <button className="button-right" 
             onClick={props.rightButtonClicked}>
-                <i class="fas fa-forward"></i>
+                <i className="fas fa-forward"></i>
             </button>
             <button className="button-play-pause" 
             onClick={props.playPauseButtonClicked}>
-                <i class="fas fa-play"></i> /<i class="fas fa-pause"></i>
+                <i className="fas fa-play"></i> <i className="fas fa-pause"></i>
             </button>
         </div>
     );

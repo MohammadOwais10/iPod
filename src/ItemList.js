@@ -13,12 +13,7 @@ class ItemList extends React.Component {
                     )
                 })
             }
-
-                {/* {optionsInMenu.length === 3 ?
-                    <div style={{ color: 'green' }}>
-                        <p style={{ fontSize: 18 }}>click "<i className="fas fa-backward"></i>" to go back</p>
-                    </div> : ''
-                } */}
+            
             </React.Fragment>
         )
     }

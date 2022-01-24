@@ -26,26 +26,31 @@ class Wallpaper extends React.Component {
 
     render() {
         return (this.state.loading ? <h1>Loading...</h1> :
-            <div className="all-songs">
-                <h1 className="all-songs-heading">
+            <div className="all-wallpaper">
+                <h1 className="all-wallpaper-heading">
                     All Wallpaper
                 </h1>
-                <div className="all-songs-list">
+                <div className="all-wallpaper-list">
                     {this.state.all_theme_list.map((item, index) => {
                         return (
-                            <div className={this.props.currentMusicSelection === index ? 'selected-song' : ''} key={index}>
-                                {item.wp_name}
+                            <div className={this.props.currentWallpaperSelection === index ? 'selected-wallpaper' : ''} key={index}>
+                                {item.wp_name} 
+                              <img src={item.wp_image}></img>
+
+                
                             </div>
                         )
                     })}
-                    <div className="instruction-all-songs">
+                    {/* <div className="instruction-all-songs">
                         Use "<i className="fas fa-backward"></i>" and "<i className="fas fa-forward"></i>" buttons to navigate.
-                    </div>
+                    </div> */}
                 </div>
 
             </div>
         );
     }
+
+
 }
 
 

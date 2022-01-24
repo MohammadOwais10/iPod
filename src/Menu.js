@@ -7,7 +7,7 @@ class Menu extends React.Component {
         return (
             <div className="display-menu">
                 <div className="logo">
-                <h1>OSM iPod</h1>
+                <h1>iPod Menu</h1>
                 </div>
                
                 <ItemList

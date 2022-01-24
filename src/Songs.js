@@ -11,6 +11,7 @@ class Songs extends React.Component {
         }
     }
     componentDidMount() {
+        /*****FetCH-Data-From-Firebase***********/
         firebase
             .firestore()
             .collection("all_songs_list")
@@ -24,7 +25,7 @@ class Songs extends React.Component {
                 this.setState({ all_songs_list: new_data_array, loading: false });
             });
     }
-
+    /*******render the song lists***********/
     render() {
         if (this.props.songIndex !== -1) {
             return <MusicPlayer
@@ -43,7 +44,7 @@ class Songs extends React.Component {
                     {this.state.all_songs_list.map((item, index) => {
                         return (
                             <div className={this.props.currentMusicSelection === index ? 'selected-song' : ''} key={index}>
-                                {item.name}
+                                {item.name}    {/* fetch name from firebase */}
                             </div>
                         )
                     })}
@@ -51,7 +52,6 @@ class Songs extends React.Component {
                         Use "<i className="fas fa-backward"></i>" and "<i className="fas fa-forward"></i>" buttons to navigate.
                     </div>
                 </div>
-
             </div>
         );
     }

@@ -36,22 +36,35 @@
     transform: rotate(360deg);
   }
 } */
+body {
+	margin: 0;
+	/* background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); */
+  background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
 .App{
   width:min-content;
-  padding:10px;
+  padding:15px;
   margin: auto;
-  margin-top: 10px;
-  border:10px solid lightgray;
-  border-radius: 25px;
-  background: linear-gradient(to top, #8e9eab, #eef2f3); 
-  border-style: groove;
+  margin-top: 5px;
+  /* border:10px solid silver;*/
+  border-radius: 20px; 
+  /* background: linear-gradient(to top, #8e9eab, #e9e2e2);  */
+  background-color: #d2d2d2;
+  box-shadow: inset 0 0 20px 3px #000;
+  /* border-style: groove; */
 }
 
 .display-container{
-    width:330px;
-    height:330px;
+    width:300px;
+    height:300px;
     margin:auto;
     /* border:1px solid grey; */
+    border: solid black;
     border-radius: 15px;
     background-position: center;
 	  background-repeat: no-repeat;
@@ -62,16 +75,16 @@
   }
 
 .buttons-container{
-    width: 250px;
-    height: 250px;
+    width: 230px;
+    height: 230px;
     margin:10px auto;
     display:flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    /* border: 2px solid black; */
     border-radius: 50%;
     position:relative;
-    background-color: whitesmoke;
+    background-color: white;
 }
 .buttons-center{
     width:50%;
@@ -81,7 +94,7 @@
     justify-content: center;
     align-items: center;
     color:white;
-    background-color: dimgray;
+    background-color: darkgray;
     border:none;
 } 
 
@@ -99,6 +112,10 @@
   background-color: transparent;
 }
 
+
+.svg-inline--fa {
+ color: darkgray;
+}
 .button-left{
   position: absolute;
   display: flex;
@@ -165,7 +182,7 @@
     align-items: center;
     width:100%;
     height:20%;
-    border:1px solid rgb(190, 190, 190);
+    border:1px solid black;
     box-sizing: border-box;
     white-space: nowrap;/* to turn off text wrapping in the screen menu */
 }
@@ -184,7 +201,7 @@
 } 
 
 .logo{
-  background: linear-gradient(to right, #f12711, #f5af19);
+  /* background: linear-gradient(to right, #f12711, #f5af19); */
   color:rgb(255, 255, 255);
   font-size: large;
 } 
@@ -204,8 +221,8 @@
 {
     height:100%;
     width:100%;
-    background-color: red;
     /* background-color: rgb(28, 250, 158); */
+    background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
     /* background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);   */
   }
 
@@ -246,7 +263,7 @@
   position: absolute;
   display: flex;
   color: whitesmoke; 
-  margin: 0.8rem 7.4rem;
+  margin: 0.5rem 6rem;
   font-weight: bold;
 }
 .display-gallery img {
@@ -262,7 +279,7 @@
   position: absolute;
   display: flex;
   color: whitesmoke; 
-  margin: 0.8rem 7.4rem;
+  margin: 0.5rem 6rem;
   font-weight: bold;
 }
 .display-setting img {
@@ -334,7 +351,7 @@
 .all-songs-list>div
 {
     border:1px solid rgb(207, 207, 207);
-    width:1005;
+    width:100%;
     height:14%;
     text-align: center;
   }
@@ -377,8 +394,9 @@
 }
 .player audio{
   margin: 10px 25px;
-  width: 285px;
+  width:252px;
   height: 30px;
+  
 }
 
 @keyframes wheel-color-animation
@@ -414,3 +432,63 @@
     color:white;
     opacity:0.9;
 }
+
+
+
+
+
+
+/***** Wallpaper Dispaly *****/
+.all-wallpaper
+{
+    height:100%;
+    width:100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-sizing: border-box;
+    overflow:hidden;
+}
+.all-wallpaper-heading
+{
+  color: black;
+    padding-bottom:10px;
+    background: linear-gradient(to right, #f00000, #dc281e); 
+    margin:0px;
+    opacity:0.8;
+    height:10%;
+    text-align: center;
+}
+.all-wallpaper-list
+{
+    font-size: 1.3rem;
+    font-weight: bolder;
+    color: whitesmoke;
+    height:86%;
+    background: linear-gradient(to right, #ceba05, #0f3443);
+}
+.all-wallpaper-list >div img
+{
+    border:1px solid rgb(207, 207, 207);
+    width:30%;
+    height:34%;
+    text-align: center;
+    display: inline-block;
+   
+  }
+  .all-wallpaper-list img{
+    border:1px solid rgb(207, 207, 207);
+    width:100%;
+    height:100%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+  }
+  .instruction-all-songs
+  {
+      height:20%;
+      background-color: blueviolet;
+      color:white;
+  }
+  .selected-wallpaper
+  {
+      background-color:rgb(79, 183, 243);
+  } 

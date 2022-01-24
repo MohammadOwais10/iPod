@@ -4,7 +4,6 @@ import Gallery from './Gallery'
 import Games from './Games'
 import Music from './Music'
 import Setting from './Setting'
-/***For songs section ********/
 import Songs from './Songs';
 import Artists from './Albums';
 import Albums from './Artists';
@@ -38,10 +37,10 @@ class Display extends React.Component {
                 {this.props.showPage === 1 && this.props.optionsInMenu.length === 3 ? <Artists /> : ''}
                 {this.props.showPage === 2 && this.props.optionsInMenu.length === 3 ? <Albums /> : ''}
 
-                {this.props.showPage === 0 && this.props.optionsInMenu.length === 2 ? <Wallpaper /> : ''}
-                {this.props.showPage === 1 && this.props.optionsInMenu.length === 2 ? <Theme
-                 currentWallpaperSelection={this.props.currentWallpaperSelection}
+                {this.props.showPage === 0 && this.props.optionsInMenu.length === 2 ? <Wallpaper 
+                currentWallpaperSelection={this.props.currentWallpaperSelection}
                 /> : ''}
+                {this.props.showPage === 1 && this.props.optionsInMenu.length === 2 ? <Theme /> : ''}
             </div>
         );
     }
