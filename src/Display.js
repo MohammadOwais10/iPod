@@ -7,8 +7,8 @@ import Setting from './Setting'
 import Songs from './Songs';
 import Artists from './Albums';
 import Albums from './Artists';
-import Wallpaper from './Wallpaper';
-import Theme from './Theme';
+import Photos  from './Photos';
+import Collection from './Collection'
 
 
 class Display extends React.Component {
@@ -37,10 +37,11 @@ class Display extends React.Component {
                 {this.props.showPage === 1 && this.props.optionsInMenu.length === 3 ? <Artists /> : ''}
                 {this.props.showPage === 2 && this.props.optionsInMenu.length === 3 ? <Albums /> : ''}
 
-                {this.props.showPage === 0 && this.props.optionsInMenu.length === 2 ? <Wallpaper 
-                currentWallpaperSelection={this.props.currentWallpaperSelection}
+                {this.props.showPage === 0 && this.props.optionsInMenu.length === 2 ? <Photos 
+                currentPhotoSelection={this.props.currentPhotoSelection}
+                photoIndex={this.props.photoIndex}
                 /> : ''}
-                {this.props.showPage === 1 && this.props.optionsInMenu.length === 2 ? <Theme /> : ''}
+                {this.props.showPage === 1 && this.props.optionsInMenu.length === 2 ? <Collection /> : ''}
             </div>
         );
     }

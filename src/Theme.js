@@ -6,7 +6,7 @@ class Theme extends React.Component {
         return (
             <div className="display-setting">
                 <img  src={themeImage} alt="Setting Image" />
-                <h1>Wallpaper</h1>
+                <h1>Theme</h1>
             </div>
         )
     }

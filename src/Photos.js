@@ -1,7 +1,8 @@
 import React from "react";
 import firebase from "firebase/app";
+import ZoomImage from "./ZoomImage";
 
-class Wallpaper extends React.Component {
+class Photos extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -25,27 +26,31 @@ class Wallpaper extends React.Component {
     }
 
     render() {
+        if (this.props.photoIndex !== -1) {
+            return <ZoomImage
+                photoIndex={this.props.photoIndex}
+                Photos={this.state.all_theme_list}
+            />;
+        }
         return (this.state.loading ? <h1>Loading...</h1> :
-            <div className="all-wallpaper">
-                <h1 className="all-wallpaper-heading">
-                    All Wallpaper
+            <div className="all-photos">
+                <h1 className="all-photos-heading">
+                    All Photos
                 </h1>
-                <div className="all-wallpaper-list">
+                <div className="all-photos-list">
                     {this.state.all_theme_list.map((item, index) => {
                         return (
-                            <div className={this.props.currentWallpaperSelection === index ? 'selected-wallpaper' : ''} key={index}>
-                                {item.wp_name} 
-                              <img src={item.wp_image}></img>
-
-                
+                            <div className={this.props.currentPhotoSelection === index ? 'selected-photos' : ''} key={index}>
+                              <img  src={item.wp_image}></img>
                             </div>
                         )
                     })}
-                    {/* <div className="instruction-all-songs">
-                        Use "<i className="fas fa-backward"></i>" and "<i className="fas fa-forward"></i>" buttons to navigate.
-                    </div> */}
+                    
                 </div>
-
+                <div className="instruction-all-photos">
+                        {/* Use "<i className="fas fa-backward"></i>" and "<i className="fas fa-forward"></i>" buttons to navigate. */}
+                        Zoom In Photo ok on "Select" Button
+                    </div>
             </div>
         );
     }
@@ -56,4 +61,4 @@ class Wallpaper extends React.Component {
 
 
 
-export default Wallpaper;
+export default Photos;

@@ -13,15 +13,15 @@ class App extends React.Component {
             options: ['Games', 'Music', 'Gallery', 'Setting'],
             musicItem: ['Songs','Albums', 'Artists'],
             generalMenu: ['Games', 'Music', 'Gallery', 'Setting'],
-            settingItem:['Wallpaper','Theme'],
+            galleryItem:['Photos','Collection'],
             changeAngle: 0,
             selected: 0,
             showPage: -1,
             songSelection: 0,
             songsIndex: -1,
             nowPlaying: false,
-            wallpaperSelection:0,
-            wallpaperIndex:-1,
+            photoSelection:0,
+            photoIndex:-1,
         }
     }
  
@@ -63,12 +63,13 @@ class App extends React.Component {
         }
         
         /*If we at inside at any section, when we click it return back at menu*/      
-         if(displayMenuClassList.contains('width-50') && this.state.options.length === 3 || displayMenuClassList.contains('width-50') && this.state.options.length === 2 || displayMenuClassList.contains('width-50') && this.state.options.length === 4){
+         if((displayMenuClassList.contains('width-50') && this.state.options.length === 3) || (displayMenuClassList.contains('width-50') && this.state.options.length === 2) || (displayMenuClassList.contains('width-50') && this.state.options.length === 4)) {
             this.setState({
                 options:this.state.generalMenu,
                 showPage:-1,
                 songIndex:-1,
                 selected:0,
+                photoIndex:-1,
             });
         }
     }
@@ -92,7 +93,7 @@ class App extends React.Component {
         }
         /******this part use select music from song index list******/
         if (!document.getElementsByClassName('display-menu')[0].classList.contains('width-50')) {
-            if (this.state.options.length === 3 ) {    //if at music section
+            if (this.state.options.length === 3 ) {    //at music section
                 if (this.state.showPage === 0) {        //at songs page
                     if (this.state.songsIndex === -1) {  //not on music page
                         this.setState({
@@ -104,27 +105,29 @@ class App extends React.Component {
                 }
             }
         }
-        /*****this part use for open setting section menu *******/
-        if (this.state.selected === 3 && this.state.options.length === 4) {
+        /*****this part use for open gallery section menu *******/
+        if (this.state.selected === 2 && this.state.options.length === 4) {
             this.setState({
-                options: this.state.settingItem,
+                options: this.state.galleryItem,
                 selected: 0,
-                showPage: -1,//0
-                songsIndex: -1,//we dont want to play any song
+                showPage: -1,
+              // add  photoIndex: -1,
             }
             );
             this.selectItem = 0;
             return;
         }
-        /******this part use select wallpaper from wallpaper index list******/
+        /******this part use select photo from gallery index list******/
         if (!document.getElementsByClassName('display-menu')[0].classList.contains('width-50')) {
-            if (this.state.options.length === 2 ) {    //at wallpaper section
-                if (this.state.showPage === 0) {        //at wallpaper page                
-                        this.setState({
-                            wallpaperIndex: this.state.wallpaperSelection,   //for selection of set wallpaper
+            if (this.state.options.length === 2 ) {    //at gallery section
+                if (this.state.showPage === 0) {        //at photo page                
+                   if (this.state.photoIndex === -1) {
+                    this.setState({
+                            photoIndex: this.state.photoSelection,   //for selection of photo
                         });
                         this.selectItem = 0;
                         return;
+                    }
                 }
             }
         }
@@ -133,6 +136,7 @@ class App extends React.Component {
             showPage: this.state.selected,
             songsIndex: -1,
             selected: 0,
+            // wallapaperIndex:-1,
         });
         this.selectItem = 0;
         this.menuButtonClicked();
@@ -174,22 +178,24 @@ class App extends React.Component {
                     }
                 }
             }
-            /******For Wallpaper section curser*********/
+            /******For photo section curser*********/
             if (!document.getElementsByClassName('display-menu')[0].classList.contains('width-50')) {    //side menu is not visible
-                if (this.state.options.length === 2) {             // at wallpaper section
-                    if (this.state.showPage === 0) {              // at wallpaper page
-                        if (this.state.wallpaperSelection === 0)      
+                if (this.state.options.length === 2) {             // at gallery section
+                    if (this.state.showPage === 0) {              // at photo page
+                        if (this.state.photoSelection === 0)      
                             this.setState({
-                                wallpaperSelection: 5,
+                                photoSelection: 5,
+                                photoIndex: -1,
                             });
                         else
                             this.setState({
-                                wallpaperSelection: this.state.wallpaperSelection - 1,
+                                photoSelection: this.state.photoSelection - 1,
+                                photoIndex: -1,
                         });
                     }
                 }
             }
-        }
+    }
 
     /****************Right-Buton-Functions***********************************************/
     rightButtonClicked = () => {
@@ -225,17 +231,17 @@ class App extends React.Component {
                 }
             }
         }
-        /******For Wallpaper section curser*********/
+        /******For photo section curser*********/
         if (!document.getElementsByClassName('display-menu')[0].classList.contains('width-50')) {    //side menu is not visible
-            if (this.state.options.length === 2) {            //at wallpaper section
-                if (this.state.showPage === 0) {              //at wallpaper page
-                    if (this.state.wallpaperSelection === 5)  //If at playing the music at 5th index then I will reduce the index to 0 on next right button click.
+            if (this.state.options.length === 2) {            //at gallery section
+                if (this.state.showPage === 0) {              //at photo page
+                    if (this.state.photoSelection === 5)  
                         this.setState({
-                            wallpaperSelection: 0
+                            photoSelection: 0
                         });
                     else
                         this.setState({
-                            wallpaperSelection: this.state.wallpaperSelection + 1
+                            photoSelection: this.state.photoSelection + 1
                         });
                 }
             }
@@ -246,7 +252,6 @@ class App extends React.Component {
     currentlyOnPlayMusicScreen = () => { 
         let wheelcolor=document.getElementsByClassName('buttons-container')[0].classList;
         if (this.state.nowPlaying) {
-            // 
             this.setState({
                 nowPlaying: false
             });
@@ -257,9 +262,7 @@ class App extends React.Component {
                 nowPlaying: true
             });
             wheelcolor.add("colored");
-        }
-        // 
-            
+        }          
     }
  
     /***************Play-Pause-Button-For-Song*********************************************/
@@ -278,7 +281,6 @@ class App extends React.Component {
         } 
     }
 
-
     render() {
         return (
             <div className="App">
@@ -291,8 +293,8 @@ class App extends React.Component {
                     playPauseButtonClicked={this.playPauseButtonClicked}
                     currentlyOnPlayMusicScreen={this.currentlyOnPlayMusicScreen}
                     musicItem={this.state.musicItem}
-                    currentWallpaperSelection={this.state.wallpaperSelection}
-                    wallpaperIndex={this.state.wallpaperIndex}
+                    currentPhotoSelection={this.state.photoSelection}
+                    photoIndex={this.state.photoIndex}
                 />
                 <Buttons
                     check={this.checker}

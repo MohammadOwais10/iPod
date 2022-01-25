@@ -438,16 +438,17 @@ body {
 
 
 
-/***** Wallpaper Dispaly *****/
-.all-wallpaper
+/***** Photos Dispaly *****/
+.all-photos
 {
     height:100%;
     width:100%;
     background-color: rgba(255, 255, 255, 0.9);
     box-sizing: border-box;
     overflow:hidden;
+
 }
-.all-wallpaper-heading
+.all-photos-heading
 {
   color: black;
     padding-bottom:10px;
@@ -457,38 +458,86 @@ body {
     height:10%;
     text-align: center;
 }
-.all-wallpaper-list
+.all-photos-list
 {
     font-size: 1.3rem;
     font-weight: bolder;
     color: whitesmoke;
-    height:86%;
-    background: linear-gradient(to right, #ceba05, #0f3443);
+    height:75%;
+    background: linear-gradient(to right, #ceba05, #0f3443);  
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+ 
+    
 }
-.all-wallpaper-list >div img
-{
-    border:1px solid rgb(207, 207, 207);
-    width:30%;
-    height:34%;
+.all-photos-list >div img{
+    /* border:1px solid rgb(207, 207, 207); */
+    width:90px;
+    height:100px;
     text-align: center;
-    display: inline-block;
-   
-  }
-  .all-wallpaper-list img{
+    background-color: #34e89e; 
+    align-items: center;
+    margin: 4px;
+  } 
+  .all-photos-list img{
     border:1px solid rgb(207, 207, 207);
     width:100%;
     height:100%;
-    text-align: center;
-    display: inline-block;
-    position: relative;
+    
+    background-color: #000046;
   }
-  .instruction-all-songs
+
+  .instruction-all-photos
   {
       height:20%;
       background-color: blueviolet;
       color:white;
+      padding: 5px;
   }
-  .selected-wallpaper
+  .selected-photos
   {
       background-color:rgb(79, 183, 243);
+      width:90px;
+      height:100px;
+      opacity: 0.5;
   } 
+
+
+
+  /*******Zoom In Photo*******/
+ .display-zoom-photo
+{
+    height:100%;
+    width:100%;
+    /* background-color: rgb(28, 250, 158); */
+    background-image: linear-gradient(to right, #9bcf0a 0%, #fc00ff 100%);
+    /* background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);   */
+  }
+
+
+  .zoom-photo
+{
+    width:100%;
+    height:90%;
+    margin-left:auto;
+    margin-right:auto;
+    /* border:5px solid rgb(0, 0, 0); */
+    border-radius: 5%;
+}
+
+.zoom-photo>img
+{
+    height:100%;
+    width:100%;
+    border-radius: 5%;
+}
+
+.instruction-zoom-photos
+{
+  margin-top: 2px;
+    height:8%;
+    background-color: blueviolet;
+    color:white;
+    padding: 6px;
+}
