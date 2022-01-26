@@ -1,0 +1,14 @@
+/********Display-of-App********************/
+.display-container{
+  width:300px;
+  height:300px;
+  margin:auto;
+  border: solid black;
+  border-radius: 15px;
+  background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  overflow: hidden;
+  position:relative;
+  background-image: url("../assets/images/bg4.jpg");
+}

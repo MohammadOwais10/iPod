@@ -1,0 +1,6 @@
+/*************Music-Display-Section*********************/
+.display-music{
+    height:100%;
+    width:100%;
+    background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+}

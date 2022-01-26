@@ -1,0 +1,17 @@
+/*****Heading-Of-Albums-Section********/
+.display-album h1{
+    position: absolute;
+    display: flex;
+    color: rgb(230, 0, 0); 
+    margin: 0.6rem 6rem;
+    font-weight: bold;
+  }
+
+  /*****Albums-Section-Image**********/
+  .display-album img {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+  }

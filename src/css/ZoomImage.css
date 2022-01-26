@@ -1,0 +1,29 @@
+/****Display-Zoom-Image-Container********/
+.display-zoom-photo{
+    height:100%;
+    width:100%;
+}
+
+/****Zoom-Image-Container-For-Image********/
+  .zoom-photo {
+    width:100%;
+    height:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/****Zoom-Image-Size**********************/
+.zoom-photo>img {
+    height:100%;
+    width:100%;
+    align-items: center;
+}
+
+/****Zoom-Image-Instruction****************/
+.instruction-zoom-photos {
+    height:8%;
+    background-color: rgb(112, 0, 75);
+    color:white;
+    padding: 6px;
+    text-align: center;
+}
