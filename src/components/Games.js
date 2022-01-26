@@ -3,6 +3,12 @@ import '../css/Games.css';
 import gameImage from "../assets/images/gamesImage.PNG"
 
 class Games extends React.Component {
+    componentDidMount() {
+        this.props.currentlyScreen();
+    }
+    componentWillUnmount() {
+        this.props.currentlyScreen();
+    }
     render () {
         return (
             <div className="display-games">

@@ -76,11 +76,20 @@ class App extends React.Component {
 
     /**********Center-Button-Click-Fuctions*********************************************/
     selectButtonClicked = () => {
-        /***if we at play music screen and the side bar is hidden, when we click it didn't work****/
+        /***if we at play music player screen or Zoom Image  screen and the side bar is hidden, when we click it then "select" button nothing happen ****/
         if(this.state.nowPlaying&&!document.getElementsByClassName('display-menu')[0].classList.contains('width-50')) {
             return;
         }
-        /*****this part use for open music section menu *******/
+        /**if at Albums or Artits Screen, when we click it then "select" button nothing happen****/
+        if((this.state.showPage === 1 && this.state.optionsInMenu.length === 3) || (this.state.showPage === 2 && this.state.optionsInMenu.length === 3)){
+            return;
+        }
+        /**if at Setting or Collection Screen, when we click it then "select" button nothing happen**/
+        if((this.state.showPage === 3 && this.state.optionsInMenu.length === 4 ) || (this.state.showPage === 1 && this.state.optionsInMenu.length === 2)){
+            return;
+        }
+
+        /*this part use for open music section menu **/
         if (this.state.selected === 2 && this.state.options.length === 4) {
             this.setState({
                 options: this.state.musicItem,
@@ -91,7 +100,7 @@ class App extends React.Component {
             this.selectItem = 0;
             return;
         }
-        /******this part use select music from song index list******/
+        /**this part use select music from song index list**/
         if (!document.getElementsByClassName('display-menu')[0].classList.contains('width-50')) {
             if (this.state.options.length === 3 ) {    //at music section
                 if (this.state.showPage === 0) {        //at songs page
@@ -105,7 +114,7 @@ class App extends React.Component {
                 }
             }
         }
-        /*****this part use for open gallery section menu *******/
+        /***this part use for open gallery section menu****/
         if (this.state.selected === 1 && this.state.options.length === 4) {
             this.setState({
                 options: this.state.galleryItem,
@@ -117,7 +126,7 @@ class App extends React.Component {
             this.selectItem = 0;
             return;
         }
-        /******this part use select photo from gallery index list******/
+        /*****this part use select photo from gallery index list*****/
         if (!document.getElementsByClassName('display-menu')[0].classList.contains('width-50')) {
             if (this.state.options.length === 2 ) {    //at gallery section
                 if (this.state.showPage === 0) {        //at photo page                
@@ -247,7 +256,7 @@ class App extends React.Component {
     }
 
     /*************It use stop music when we are not at music player section*****************/
-    currentlyOnPlayMusicScreen = () => { 
+    currentlyScreen = () => { 
         let wheelcolor=document.getElementsByClassName('buttons-container')[0].classList;
         if (this.state.nowPlaying) {
             this.setState({
@@ -259,10 +268,12 @@ class App extends React.Component {
             this.setState({
                 nowPlaying: true
             });
+            if(this.props.showPage === 2 && this.props.optionsInMenu.length === 4) { //when we at music player and song Screen ,then it add wheel animation 
             wheelcolor.add("colored");
+            }
         }          
     }
- 
+
     /***************Play-Pause-Button-For-Song*********************************************/
     playPauseButtonClicked = () => {
         let wheelcolor=document.getElementsByClassName('buttons-container')[0].classList;
@@ -289,7 +300,7 @@ class App extends React.Component {
                     currentMusicSelection={this.state.songSelection}
                     songIndex={this.state.songsIndex}
                     playPauseButtonClicked={this.playPauseButtonClicked}
-                    currentlyOnPlayMusicScreen={this.currentlyOnPlayMusicScreen}
+                    currentlyScreen={this.currentlyScreen}
                     musicItem={this.state.musicItem}
                     currentPhotoSelection={this.state.photoSelection}
                     photoIndex={this.state.photoIndex}

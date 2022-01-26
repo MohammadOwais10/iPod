@@ -31,6 +31,7 @@ class Photos extends React.Component {
             return <ZoomImage
                 photoIndex={this.props.photoIndex}
                 Photos={this.state.all_photos_list}
+                currentlyScreen={this.props.currentlyScreen}
             />;
         }
         return (this.state.loading ? <h1>Loading...</h1> :

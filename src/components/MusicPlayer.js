@@ -3,11 +3,11 @@ import '../css/MusicPlayer.css';
 
 class MusicPlayer extends React.Component {
     componentDidMount() {
-        this.props.currentlyOnPlayMusicScreen();
+        this.props.currentlyScreen();
         this.props.playPauseButtonClicked();
     }
     componentWillUnmount() {
-        this.props.currentlyOnPlayMusicScreen();
+        this.props.currentlyScreen();
     }
     render() {
         const { songIndex, Songs } = this.props;

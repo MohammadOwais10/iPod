@@ -2,6 +2,12 @@ import React from 'react';
 import '../css/ZoomImage.css';
 
 class ZoomImage extends React.Component {
+    componentDidMount() {
+        this.props.currentlyScreen();
+    }
+    componentWillUnmount() {
+        this.props.currentlyScreen();
+    }
     render() {
         const { photoIndex, Photos } = this.props;
         return (
