@@ -1,8 +1,51 @@
-# Getting Started with Create React App
+# iPod
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Clone Like iPod Classic
+
+## Tools Used
+
+<img src="https://www.datocms-assets.com/45470/1631110818-logo-react-js.png" height="100px"   alt="React"> <img src="https://miro.medium.com/max/1024/1*oT_l6QxMdTN65-0gwFqeNg.png" height="120px"  alt="Firebase">
+
+1. React Js
+2. Firebase (cloud storage)
+
+## Features
+
+1. Rotation-On simulation. (Device rotates and so does screen and buttons).
+2. Fully working functionalty for listening to music, all controls work : play/pause, forward, reverse, next, previous.
+3. Changing Music song it show on screen and its details also show on screen.
+4. Image menu(choose image, zoom in, forward and reverse pointer).
+5. Firebase Storage is used. Songs are streamed from Google's high speed Firebase Storage.
+6. Instructions are mentioned on the screen. No room for any type of confusion.
+7. Action buttons light up when a song is being played.
+8. In Starting there are menu options, choose according to your need.
+
+## How to use?
+
+1. In the group of circular action buttons section , the upper-most button is the menu button. left and right buttons are navigation buttons.The bottom-most button is the Play/Pause button to stop or play the current song.
+2. To navigate in the menu, just swipe clockwise if you want to select an item which is available below the currently selected item. And similarly, swipe anti-clockwise if you want to select an item which is available above the currently selected item.
+3. Go to All Songs in the Music Section to view a list of all songs available currently on the Cloud Storage.
+4. To play a song click the "Select" button. Also to select a section from the list of Sections in the menu, press "Select Button".
+5. To change a song while another one is being played, click on the left or right arrow buttons and click on the Play/Pause button on the bottom.
+6. To rotate the screen, press the small circular button with `Rotation` symbol on the right mid on the app.
+
+## UI Screenshot
+
+### Home and Menu iPod UI
+
+<img src="/assets/homeipod.png" width="400px" height="550px"> <img src="/assets/menuipod.png" width="400px" height="550px">
+
+### Photo Collection and Selected Open Image UI
+
+<img src="/assets/photoAllipod.png" width="400px" height="550px"> <img src="/assets/photoZoomipod.png" width="400px" height="550px">
+
+### Song List and Playing Song UI
+
+<img src="/assets/songAllipod.png" width="400px" height="550px"> </img> <img src="/assets/songPlayipod.png" width="390px" height="550px"></img>
 
 ## Available Scripts
+
+#### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
