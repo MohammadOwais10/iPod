@@ -2,6 +2,8 @@
 
 Clone Like iPod Classic
 
+### visit : https://ipod-11b25.web.app
+
 ## Tools Used
 
 <img src="https://www.datocms-assets.com/45470/1631110818-logo-react-js.png" height="100px"   alt="React"> <img src="https://miro.medium.com/max/1024/1*oT_l6QxMdTN65-0gwFqeNg.png" height="120px"  alt="Firebase">
@@ -33,15 +35,15 @@ Clone Like iPod Classic
 
 ### Home and Menu iPod UI
 
-<img src="/assets/homeipod.png" width="400px" height="550px"> <img src="/assets/menuipod.png" width="400px" height="550px">
+<img src="/assets/homeipod.png" width="350px" height="550px"> <img src="/assets/menuipod.png" width="350px" height="550px">
 
 ### Photo Collection and Selected Open Image UI
 
-<img src="/assets/photoAllipod.png" width="400px" height="550px"> <img src="/assets/photoZoomipod.png" width="400px" height="550px">
+<img src="/assets/photoAllipod.png" width="350px" height="550px"> <img src="/assets/photoZoomipod.png" width="350px" height="550px">
 
 ### Song List and Playing Song UI
 
-<img src="/assets/songAllipod.png" width="400px" height="550px"> </img> <img src="/assets/songPlayipod.png" width="390px" height="550px"></img>
+<img src="/assets/songAllipod.png" width="350px" height="550px"> </img> <img src="/assets/songPlayipod.png" width="350px" height="550px"></img>
 
 ## Available Scripts
 
